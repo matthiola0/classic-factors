@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "classic-factors"
+version = "0.1.0"
+description = "Cross-market factor research: momentum and short-term reversal across TW/US/BTC"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "qtools @ git+https://github.com/matthiola0/qtools.git@v0.3.0",
+    "statsmodels>=0.14",
+    "seaborn>=0.13",
+    "jupyterlab>=4.0",
+    "nbformat>=5.9",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/factors"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
